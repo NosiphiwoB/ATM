@@ -1,0 +1,57 @@
+body {
+    background-image: url('./assets/map-g85bbe7f75_1920.jpg');
+}
+
+
+.container {
+    padding-top: 2rem;
+background-color: rgba(255, 255, 255, 0.438);
+text-align: center;
+height: 800px;
+width: 100%;
+font-size: 36px;
+border-radius: 200px;
+
+}
+
+.bal{
+    margin-top: 6rem;
+}
+
+.header {
+    text-align: center;
+    font-size: 120px;
+}
+
+button {
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+#dep-wit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 1000px;
+    margin: auto;
+    grid-gap:5rem;
+}
+
+/* #withdraw{
+height:30px;
+} */
+.dep {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    grid-gap:5px;
+}
+
+.wtd {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    grid-gap:5px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ATM</title>
+</head>
+<body>
+    <form id="bdy">
+
+    <div class="container">
+        <h1 class="header">ATM</h1>
+
+     <div id="dep-wit">
+        <div class="dep">
+      <label>Deposit</label>
+      <input type="number" id="deposit">
+      <button onclick="myDeposit(event)">Deposit</button>
+      <small id="msg"></small>
+    </div>
+
+    <div class="wtd">
+    <lebel>Withdrawal</lebel>
+    <input type="number" id="withdraw">
+    <button onclick="myWithdrawal(event)">Withdraw</button>
+    <small id="msg1"></small>
+    </div>
+</div>
+ 
+    <div class="bal">
+        <lebel>Balance</lebel>
+        <p id="displayBalance"></p>
+    </div>
+   
+
+
+    </div>
+</form>
+    <script src="./index.js"></script>
+</body>
+</html>
