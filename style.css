@@ -37,9 +37,7 @@ button {
     grid-gap:5rem;
 }
 
-/* #withdraw{
-height:30px;
-} */
+
 .dep {
     display: flex;
     flex-direction: row;
@@ -55,3 +53,9 @@ height:30px;
     margin: auto;
     grid-gap:5px;
 }
+
+ input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+  }
