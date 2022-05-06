@@ -21,13 +21,44 @@ function register () {
         userEmail: userEmail,
         balance: 0,
     };
+
+    let data = [JSON.parse(localStorage.getItem("information"))][0];
+    if(data === null){
+        array.push(inform);
+        let dubData = localStorage.getItem("information") || '[]'
+        let myData = [...JSON.parse(dubData), inform] 
+        return localStorage.setItem("information",JSON.stringify(myData));
+    }
+
+    for(let i = 0; i < data.length; i++){
+        if(userEmail === data[i].userEmail){
+           alert("email address already registered");
+            break;
+        }else {
+            array.push(inform);
+            let dubData = localStorage.getItem("information") || '[]'
+            let myData = [...JSON.parse(dubData), inform] 
+            return localStorage.setItem("information",JSON.stringify(myData));
+        }
+    }  
+}
+
+function login () {
+    let userName = document.getElementById("name").value;
+    let userEmail = document.getElementById("email").value;
+
+    const inform = {
+        accountNum: accountNumber(),
+        userName: userName,
+        userEmail: userEmail,
+        balance: 0,
+    };
     array.push(inform);
     let data = localStorage.getItem("information") || "[]";
     let myData = [...JSON.parse(data), inform] 
 
     return localStorage.setItem("information",JSON.stringify(myData));
 }
-
 
 function showLoginForm() {
     loginForm.style.display = "block"
@@ -39,7 +70,6 @@ function showRegisterForm() {
     loginButton.style.display = "none"
     registerForm.style.display = "block"     
     isShowLogin = !isShowLogin
-
 }
 
 registerForm
@@ -47,49 +77,50 @@ if(isShowRegister == false){
     registerForm.style.display = "none"
 }
 
-
 if(isShowLogin == false){
     loginForm.style.display = "none"
  }
 
-
-
-
-
-
-// let balance = 0;
-
-// const myDeposit = (event) =>{
-//     event.preventDefault();
-// let Deposit =document.getElementById('deposit').value;
  
 
-// if(Deposit < 0) {
-//     document.getElementById('msg').innerHTML=`<p style='color:red'>insert valid amount</p>`;
-//  }else {
-//      balance  += parseInt(Deposit, 10);
-//      document.getElementById('displayBalance').innerHTML = balance;
-//  }
-//   reset();
-// }
 
 
-// const myWithdrawal = (event) => {
-//     event.preventDefault();
-//     let withdrawal = document.getElementById('withdraw').value
+
+
+
+let balance = 0;
+
+const myDeposit = (event) =>{
+    event.preventDefault();
+let Deposit =document.getElementById('deposit').value;
+ 
+
+if(Deposit < 0) {
+    document.getElementById('msg').innerHTML=`<p style='color:red'>insert valid amount</p>`;
+ }else {
+     balance  += parseInt(Deposit, 10);
+     document.getElementById('displayBalance').innerHTML = balance;
+ }
+  reset();
+}
+
+
+const myWithdrawal = (event) => {
+    event.preventDefault();
+    let withdrawal = document.getElementById('withdraw').value
      
 
-// if(withdrawal > balance || balance < 0) {
-//  document.getElementById('msg1').innerHTML=`<p style='color:red'>insuffient funds</p>`;
-// } else {
-//     balance -= parseInt(withdrawal, 10);
-//     document.getElementById('displayBalance').innerHTML = balance;
-// }
-// reset();
-// }
+if(withdrawal > balance || balance < 0) {
+ document.getElementById('msg1').innerHTML=`<p style='color:red'>insuffient funds</p>`;
+} else {
+    balance -= parseInt(withdrawal, 10);
+    document.getElementById('displayBalance').innerHTML = balance;
+}
+reset();
+}
 
-// const reset = () => {
-//     document.getElementById("deposit").value = " ";
-//     document.getElementById("withdraw").value = " ";
-// }
+const reset = () => {
+    document.getElementById("deposit").value = " ";
+    document.getElementById("withdraw").value = " ";
+}
  

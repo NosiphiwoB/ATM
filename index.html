@@ -22,6 +22,11 @@
     <input type="text">
     <label>Email</label>
     <input type="email">
+    <br>
+    <br>
+    <button onclick="login()">sign in</button>
+
+    
     
 </div>
    <br> 
@@ -31,16 +36,19 @@
 </div>
 
 <div id="register-form">
-    <label>Name</lebel>
+    <label>Name</label>
     <input id="name" type="text">
     <label>Email</label>
     <input id="email" type="email">
+    <br>
+    <br>
     <button onclick="register()">sign up</button>
+  <p id="error"></p>
 </div>
 
 
-    
-     <!-- <div id="dep-wit">
+    <div id="bank" style="display:none;">
+     <div id="dep-wit">
         <div class="dep">
       <label>Deposit</label>
       <input type="number" id="deposit">
@@ -49,7 +57,7 @@
     </div>
 
     <div class="wtd">
-    <lebel>Withdrawal</lebel>
+    <label>Withdrawal</label>
     <input type="number" id="withdraw">
     <button onclick="myWithdrawal(event)">Withdraw</button>
     <small id="msg1"></small>
@@ -57,13 +65,13 @@
 </div>
  
     <div class="bal">
-        <lebel>Balance</lebel>
+        <label>Balance</label>
         <p id="displayBalance"></p>
     </div>
-   
+</div>
 
 
-    </div> -->
+    </div>
 </div>
     <script src="./index.js"></script>
 </body>
